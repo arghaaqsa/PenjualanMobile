@@ -51,7 +51,7 @@ class _DashboardCashierState extends State<DashboardCashier> {
 
       final dio = Dio();  // Instance baru buat auth
       dio.options.headers['Authorization'] = 'Bearer $token';  // Header auth
-      dio.options.baseUrl = 'http://192.168.100.134:8081/api/v1';  // IP laptop-mu
+      dio.options.baseUrl = 'http://localhost:8081/api/v1';  // IP laptop-mu
 
       final params = <String, dynamic>{
         'page': 1,
@@ -140,7 +140,7 @@ class _DashboardCashierState extends State<DashboardCashier> {
     try {
       final prefs = await SharedPreferences.getInstance();
       final token = prefs.getString('token');
-      final urlString = 'http://192.168.100.134:8081/api/v1/history/sales/$saleId/pdf';  // IP laptop-mu
+      final urlString = 'http://localhost:8081/api/v1/history/sales/$saleId/pdf';  // IP laptop-mu
       final dio = Dio();
       dio.options.headers['Authorization'] = 'Bearer $token';
 
@@ -168,7 +168,7 @@ class _DashboardCashierState extends State<DashboardCashier> {
 
       final dio = Dio();
       dio.options.headers['Authorization'] = 'Bearer $token';
-      dio.options.baseUrl = 'http://192.168.100.134:8081/api/v1';  // IP laptop-mu
+      dio.options.baseUrl = 'http://localhost:8081/api/v1';  // IP laptop-mu
 
       final response = await dio.get('/history/sales/$saleId');
 
